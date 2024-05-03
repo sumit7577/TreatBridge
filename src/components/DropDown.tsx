@@ -28,9 +28,9 @@ export const DropDown = (props: DropDownProps) => {
     return (
         <Grid className="w-full">
             <Block className="w-full gap-1">
-                <Image src={selected?.icon} classname="h-8 w-8" />
-                <h2 className="font-black">{selected?.name}</h2>
-                <HeroIcon iconName={!openModal ? "ChevronDownIcon" : "ChevronUpIcon"} className="h-4 w-4" onClick={() => {
+                <Image src={selected?.icon} classname="h-[57px] w-[57px]" />
+                <h2 className="font-[800] text-[24px]">{selected?.name}</h2>
+                <HeroIcon iconName={!openModal ? "ChevronDownIcon" : "ChevronUpIcon"} className="h-[6.5px] w-[13px]" onClick={() => {
                     setOpenModal(() => !openModal)
                 }} />
             </Block>
