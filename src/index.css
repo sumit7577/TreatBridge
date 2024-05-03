@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--font);
+    color: rgb(var(--text));
+    background: rgb(var(--background));
+    font-feature-settings: "kern";
+}
+
+.bold-text{
+    @apply font-bold
+}
