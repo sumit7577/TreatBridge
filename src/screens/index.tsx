@@ -12,19 +12,53 @@ import Button from "../components/Button";
 import Modal from "../components/Modal";
 
 
+const Stepper = () => {
+    return (
+        <ol className="relative text-gray-500 border-s border-gray-500 dark:border-gray-700 dark:text-gray-400">
+            <li className="mb-10 ms-6">
+                <span className="absolute flex items-center justify-center w-[33px] h-[33px] rounded-full -start-4 ring-1 ring-slate-600">
+                    <h2>1</h2>
+                </span>
+                <h3 className="font-[600] text-[20px] text-black">Starting Bridge Transaction</h3>
+            </li>
+            <li className="mb-10 ms-6">
+                <span className="absolute flex items-center justify-center w-[33px] h-[33px] rounded-full -start-4 ring-1 ring-slate-600">
+                    <h2>2</h2>
+                </span>
+                <h3 className="font-[600] text-[20px] text-black">Crossing Bridge</h3>
+            </li>
+            <li className="mb-10 ms-6">
+                <span className="absolute flex items-center justify-center w-[33px] h-[33px] rounded-full -start-4 ring-1 ring-slate-600">
+                    <h2>3</h2>
+                </span>
+                <h3 className="font-[600] text-[20px] text-black">Approving Transfer</h3>
+            </li>
+            <li className="ms-6">
+                <span className="absolute flex items-center justify-center w-[33px] h-[33px] rounded-full -start-4 ring-1 ring-slate-600">
+                    <h2>4</h2>
+                </span>
+                <h3 className="font-[600] text-[20px] text-black">Complete</h3>
+            </li>
+        </ol>
+    )
+}
+
+
 const coins = [
     { name: "BSC", icon: Binance, label: "BSC" },
     { name: "ETH", icon: Etherum, label: "Etherium" },
     { name: "ETH", icon: Etherum, label: "Etherium" },
-    { name: "ETH", icon: Etherum, label: "Etherium" }
+    { name: "ETH", icon: Etherum, label: "Etherium" },
+    { name: "BSC", icon: Binance, label: "BSC" },
+    { name: "BSC", icon: Binance, label: "BSC" }
 ]
 
 const Wallet = (props: { item: typeof coins[0] }) => {
     const { icon } = props.item;
     return (
         <Grid className="items-center">
-            <Image src={icon} classname="h-8 w-8" />
-            <h2 className="text-[0.50rem] bold-text">Binance Wallet</h2>
+            <Image src={icon} classname="h-[57px] w-[57px]" />
+            <h2 className="text-[12px] font-[600] text-center">Binance Wallet</h2>
         </Grid>
     )
 }
@@ -34,14 +68,18 @@ const Home = () => {
     const [toNetwork, setToNetwork] = useState<typeof coins[0]>(coins[1]);
     const [modal, setModal] = useState<boolean>(false);
     return (
-        <Grid className={`bg-primary w-[100vw] h-[100vh] justify-center`}>
+        <Grid className={`bg-gradient-to-r from-primaryho to-primary w-[100vw] h-[100vh] justify-center`}>
+            <Block className="absolute right-[100px] top-[122px]">
+                <Stepper />
+            </Block>
+
             <Block className="w-full justify-center">
                 <Card className="min-w-[644px] gap-4">
                     <Block className="justify-between w-full">
                         <h2 className="bold-text text-[24px]">Treat Bridge</h2>
                         <Block className="gap-2">
-                            <HeroIcon iconName="Cog6ToothIcon" className="h-5 w-5 bg-primaryho rounded-md text-primary" />
-                            <HeroIcon iconName="ArrowPathIcon" className="h-5 w-5 bg-primaryho rounded-md text-primary" />
+                            <HeroIcon iconName="Cog6ToothIcon" className="h-[28px] w-[28px] bg-primaryho rounded-md text-primary" />
+                            <HeroIcon iconName="ArrowPathIcon" className="h-[28px] w-[28px] bg-primaryho rounded-md text-primary" />
                         </Block>
 
                     </Block>
@@ -100,7 +138,8 @@ const Home = () => {
 
             <Modal title={"Connect Wallet"}
                 open={modal} setModal={setModal}
-                titleClass="!text-sm text-center"
+                titleclassName="!text-[24px] text-center !font-[600]"
+                classname="w-[507px] h-[431px]"
                 onSuccess={() => {
                     setModal(() => !modal)
                 }}>
