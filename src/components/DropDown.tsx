@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import Grid from "./Grid";
 import Block from "./Block";
 import HeroIcon from "./Icon";
@@ -6,7 +6,7 @@ import Image from "./Image";
 import Modal from "./Modal";
 import InputComponent from "./Input";
 
-interface DropDownProps<K> extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+interface DropDownProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     item: Array<{ name: string, icon: string, label: string }>,
     checkbox?: boolean,
     right?: boolean,
@@ -21,8 +21,8 @@ interface DropDownProps<K> extends React.DetailedHTMLProps<React.InputHTMLAttrib
     onPress?: (item: string) => void
 }
 
-export const DropDown = <T, K>(props: DropDownProps<K>) => {
-    const { item, checkbox, left, right, selected, setSelected, textClass, onPress } = props;
+export const DropDown = (props: DropDownProps) => {
+    const { item, selected, setSelected } = props;
     const [openModal, setOpenModal] = useState<boolean>(false);
 
     return (
@@ -43,7 +43,7 @@ export const DropDown = <T, K>(props: DropDownProps<K>) => {
                         {item.map((item, index) => (
                             <li className="hover:border-red-100 hover:border-2 rounded-xl" onClick={() => {
                                 setSelected(() => item)
-                                setOpenModal(()=>false)
+                                setOpenModal(() => false)
                             }}>
                                 <List item={item} key={index} />
                             </li>

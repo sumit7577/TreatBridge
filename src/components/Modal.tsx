@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react"
 import React, { Dispatch, SetStateAction, Fragment } from "react"
+import HeroIcon from "./Icon"
 
 
 interface ModalProps {
@@ -9,10 +10,11 @@ interface ModalProps {
     setModal: Dispatch<SetStateAction<boolean>>,
     onSuccess: () => void,
     children?: React.ReactNode,
-    button?: boolean
+    button?: boolean,
+    titleClass?: string
 }
 const Modal = (props: ModalProps) => {
-    const { open, setModal, title, description, onSuccess, button, children } = props;
+    const { open, setModal, title, onSuccess, button, children, titleClass } = props;
     return (
         <div className='relative flex'>
             <Transition appear show={open} as={Fragment}>
@@ -40,12 +42,15 @@ const Modal = (props: ModalProps) => {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="w-full max-w-sm transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="w-full max-w-xs transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <Dialog.Title
-                                        as="h3"
-                                        className="bold-text text-xl mb-4"
+                                        as="div"
+                                        className={`bold-text text-xl mb-4 ${titleClass} flex justify-between`}
                                     >
-                                        {title}
+                                        <h2 className={`${titleClass}`}>{title}</h2>
+                                        <HeroIcon iconName="XMarkIcon" className="h-4 w-4" onClick={() => {
+                                            setModal(() => false)
+                                        }} />
                                     </Dialog.Title>
                                     {children}
 

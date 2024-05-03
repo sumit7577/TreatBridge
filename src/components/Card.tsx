@@ -8,7 +8,7 @@ interface CardProps {
 
 function Card({ children, className }: CardProps) {
     return (
-        <Grid className={`bg-white shadow-md p-3 rounded-md ${className} items-center`}>
+        <Grid className={`bg-white shadow-md p-4 rounded-md ${className} items-center`}>
             {children}
         </Grid>
     )
