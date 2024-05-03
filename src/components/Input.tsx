@@ -10,7 +10,7 @@ interface InputProps extends React.DetailedHTMLProps<React.InputHTMLAttributes<H
 const InputComponent = (props: InputProps) => {
     const { left, right, classname } = props;
     return (
-        <Block className={`bg-white rounded-lg shadow-md px-5 ${classname}`}>
+        <Block className={`bg-white rounded-lg shadow-sm px-5 ${classname}`}>
             {left}
             <Input {...props} />
             {right}
@@ -21,8 +21,8 @@ const InputComponent = (props: InputProps) => {
 
 
 const Input = styled.input`
-  font-size: 1.2rem;
-  padding: 0.8rem;
+  font-size: 0.9rem;
+  padding: 0.6rem;
   &:focus {
     outline: none;
   }

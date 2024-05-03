@@ -43,7 +43,7 @@ const Home = () => {
                             <h2 className="border-2 border-red-200 rounded-md shadow-md px-8 font-bold text-metatitle text-red-200">{fromNetwork.label}</h2>
                         </Block>
                         <Block className="bg-red-100 rounded-md shadow-sm p-3 gap-1">
-                            <DropDown item={coins} selected={fromNetwork} />
+                            <DropDown item={coins} selected={fromNetwork} setSelected={setFromNetwork} />
                         </Block>
                     </Grid>
                     <Grid className="border border-red-200 rounded-md p-3 w-full gap-3">
@@ -53,7 +53,7 @@ const Home = () => {
                         </Block>
 
                         <Block className="bg-red-100 rounded-md shadow-sm p-3 gap-1">
-                            <DropDown item={coins} selected={toNetwork} />
+                            <DropDown item={coins} selected={toNetwork} setSelected={setToNetwork} />
                         </Block>
                     </Grid>
                 </Card>
