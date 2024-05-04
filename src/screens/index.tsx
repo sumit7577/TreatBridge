@@ -51,7 +51,6 @@ const Stepper = () => {
     )
 }
 
-
 const coins = [
     { name: "BSC", icon: Binance, label: "BSC" },
     { name: "ETH", icon: Etherum, label: "Etherium" },
@@ -79,7 +78,7 @@ const Home = () => {
         <Grid className={`bg-gradient-to-b from-[#F2C2D3] to-[#A47989] w-[100vw] h-full justify-center`}>
 
             <Block className="w-full justify-center">
-                <Card className="lg:w-[644px] sm:w-[90%] md:w-[60%] gap-4 mt-10">
+                <Card className="lg:w-[644px] sm:w-[90%] md:w-[60%] gap-4 my-10">
                     <Block className="justify-between w-full">
                         <h2 className="bold-text text-[24px]">Treat Bridge</h2>
                         <Block className="gap-2">
@@ -156,40 +155,39 @@ const Home = () => {
 
             </Modal>
 
-            {/*<Block className="absolute left-[4%] top-[1%] bg-[rgba(131,189,103,0.2)] rounded-full w-[186px] h-[186px] justify-center">
-                <Image src={DOLLAR} classname="w-[55px] h-[88px]" />
+            <Block className="absolute left-[4%] top-[1%] bg-[rgba(131,189,103,0.2)] rounded-full w-[80px] h-[80px] md:w-[186px] md:h-[186px] justify-center">
+                <Image src={DOLLAR} classname="md:w-[55px] md:h-[88px] w-[25px] h-[44px]" />
             </Block>
 
 
-            <Block className="absolute left-[49%] top-[2%] bg-[rgba(247,147,26,0.2)] rounded-full w-[105px] h-[105px] justify-center">
-                <Image src={BTC} classname="w-[34px] h-[45px]" />
+            <Block className="absolute left-[49%] top-[2%] bg-[rgba(247,147,26,0.2)] rounded-full w-[60px] h-[60px] md:w-[105px] md:h-[105px] justify-center">
+                <Image src={BTC} classname="md:w-[34px] md:h-[45px] w-[16px] h-[22px]" />
             </Block>
 
-            <Block className="absolute left-[6%] top-[63%] bg-[rgba(255,255,255,0.2)] rounded-full w-[168px] h-[168px] justify-center">
-                <Image src={ETHERUM} classname="w-[47px] h-[80px]" />
+            <Block className="absolute left-[0] md:left-[6%] top-[63%] bg-[rgba(255,255,255,0.2)] rounded-full w-[65px] h-[65px] md:w-[168px] md:h-[168px] justify-center">
+                <Image src={ETHERUM} classname="md:w-[47px] md:h-[80px] h-[40px] w-[22px]" />
             </Block>
 
-            <Block className="absolute left-[79%] top-[47%] bg-[rgb(243,186,47,0.2)] rounded-full w-[171px] h-[171px] justify-center">
-                <Image src={BNC} classname="w-[92px] h-[92px]" />
+            <Block className="absolute left-[79%] top-[47%] bg-[rgb(243,186,47,0.2)] rounded-full w-[60px] h-[60px] md:w-[171px] md:h-[171px] justify-center">
+                <Image src={BNC} classname="md:w-[92px] md:h-[92px] h-[45px] w-[45px]" />
             </Block>
 
-            <Block className="absolute left-[66%] top-[60%] bg-[rgba(60,200,200,0.2)] rounded-full w-[122px] h-[122px] justify-center">
-                <Image src={GRAPH} classname="w-[70px] h-[66px]" />
+            <Block className="absolute left-[66%] top-[60%] bg-[rgba(60,200,200,0.2)] rounded-full  w-[65px] h-[65px] md:w-[122px] md:h-[122px] justify-center">
+                <Image src={GRAPH} classname="md:w-[70px] md:h-[66px] h-[32px] w-[35px]" />
             </Block>
 
-            <Block className="absolute left-[43%] top-[90%] bg-[rgba(0,164,120,0.2)] rounded-full w-[110px] h-[110px] justify-center">
-                <Image src={TCOIN} classname="w-[47px] h-[42px]" />
+            <Block className="absolute left-[43%] top-[90%] bg-[rgba(0,164,120,0.2)] rounded-full w-[65px] h-[65px] md:w-[110px] md:h-[110px] justify-center">
+                <Image src={TCOIN} classname="md:w-[47px] md:h-[42px] w-[22px] h-[20px]" />
             </Block>
 
-            <Block className="absolute left-[88%] top-[85%] bg-[rgba(240,64,134,0.2)] rounded-full w-[76px] h-[76px] justify-center">
-                <Image src={BBC} classname="!w-[38px] !h-[35px]" />
+            <Block className="absolute left-[79%] top-[85%] bg-[rgba(240,64,134,0.2)] rounded-full w-[65px] h-[65px] md:w-[76px] md:h-[76px] justify-center">
+                <Image src={BBC} classname="md:w-[38px] md:h-[35px] w-[16px] h-[16px]" />
 
             </Block>
 
-            <Block className="absolute right-[100px] top-[122px]">
+            <div className="absolute right-[100px] top-[122px] hidden md:flex items-center">
                 <Stepper />
-            </Block>
-                */}
+            </div>
         </Grid>
     )
 }
