@@ -26,17 +26,19 @@ export const DropDown = (props: DropDownProps) => {
     const [openModal, setOpenModal] = useState<boolean>(false);
 
     return (
-        <Grid className="w-full">
-            <Block className="w-full gap-1">
-                <Image src={selected?.icon} classname="h-[57px] w-[57px]" />
-                <h2 className="font-[800] text-[24px]">{selected?.name}</h2>
+        <Grid>
+            <Block className="gap-1 cursor-pointer" onClick={() => {
+                setOpenModal(() => !openModal)
+            }}>
+                <Image src={selected?.icon} classname="md:h-[57px] md:w-[57px] h-[35px] w-[35px]" />
+                <h2 className="font-[800] text-lg md:text-[24px]">{selected?.name}</h2>
                 <HeroIcon iconName={!openModal ? "ChevronDownIcon" : "ChevronUpIcon"} className="h-[6.5px] w-[13px]" onClick={() => {
                     setOpenModal(() => !openModal)
                 }} />
             </Block>
             <Modal title={"Select Token"}
-            classname="w-[444px] h-[652px]"
-             open={openModal} setModal={setOpenModal} onSuccess={() => { setOpenModal(false) }}>
+                classname="md:w-[444px] md:h-[652px]"
+                open={openModal} setModal={setOpenModal} onSuccess={() => { setOpenModal(false) }}>
                 <InputComponent left={
                     <HeroIcon iconName="MagnifyingGlassIcon" className="text-[#A47989] w-[16px] h-[16px]" />
                 } classname="border-2 border-red-100" placeholder="Search token name" />
@@ -65,16 +67,16 @@ interface ListProps {
 const List = (props: ListProps) => {
     const { item } = props;
     return (
-        <Block className="w-full gap-4 justify-items-stretch p-2">
+        <Block className="w-full gap-4 justify-items-stretch p-2 cursor-pointer">
             <Grid>
-                <Image src={item.icon} classname="h-[57px] w-[57px]" />
+                <Image src={item.icon} classname="md:h-[57px] md:w-[57px] h-[35px] w-[35px]" />
             </Grid>
             <Grid>
-                <h2 className="text-[20px] font-[700]">{item.name}</h2>
-                <h2 className="text-gray-400 text-[16px] font-[400]">{item.label}</h2>
+                <h2 className="text-base md:text-[20px] font-[700]">{item.name}</h2>
+                <h2 className="text-gray-400 text-sm md:text-[16px] font-[400]">{item.label}</h2>
             </Grid>
             <Grid className="items-end w-full">
-                <h2 className="font-[800] text-[16px] text-gray-500">8.50</h2>
+                <h2 className="font-[800] text-sm md:text-[16px] text-gray-500">8.50</h2>
             </Grid>
         </Block>
     )
