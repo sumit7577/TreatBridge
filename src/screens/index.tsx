@@ -185,7 +185,7 @@ const Home = () => {
 
             </Block>
 
-            <div className="absolute right-[5%] top-[10%] hidden lg:flex items-center">
+            <div className="absolute right-[5%] top-[10%] hidden lg:flex items-center max-w-[200px]">
                 <Stepper />
             </div>
         </Grid>
